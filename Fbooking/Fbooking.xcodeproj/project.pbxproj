@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4613C5812DEBBFF070C590C1 /* Pods_Fbooking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 328B348E8CF057310B2D6EB6 /* Pods_Fbooking.framework */; };
 		50F4E969230F97D50055D95D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F4E968230F97D50055D95D /* AppDelegate.swift */; };
 		50F4E96B230F97D50055D95D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F4E96A230F97D50055D95D /* ViewController.swift */; };
 		50F4E96E230F97D50055D95D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50F4E96C230F97D50055D95D /* Main.storyboard */; };
@@ -15,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		25F179E5AC34A6B096116EDD /* Pods-Fbooking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fbooking.release.xcconfig"; path = "Target Support Files/Pods-Fbooking/Pods-Fbooking.release.xcconfig"; sourceTree = "<group>"; };
+		328B348E8CF057310B2D6EB6 /* Pods_Fbooking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fbooking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50F4E965230F97D50055D95D /* Fbooking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fbooking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50F4E968230F97D50055D95D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50F4E96A230F97D50055D95D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		50F4E96F230F97D50055D95D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50F4E972230F97D50055D95D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		50F4E974230F97D50055D95D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F941D340BCDF882F23F3E0BF /* Pods-Fbooking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fbooking.debug.xcconfig"; path = "Target Support Files/Pods-Fbooking/Pods-Fbooking.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4613C5812DEBBFF070C590C1 /* Pods_Fbooking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0FC5A0935D2564A1A56F1078 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				328B348E8CF057310B2D6EB6 /* Pods_Fbooking.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		50F4E95C230F97D50055D95D = {
 			isa = PBXGroup;
 			children = (
 				50F4E967230F97D50055D95D /* Fbooking */,
 				50F4E966230F97D50055D95D /* Products */,
+				95335C8EE43FE1742B473D91 /* Pods */,
+				0FC5A0935D2564A1A56F1078 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +79,16 @@
 			path = Fbooking;
 			sourceTree = "<group>";
 		};
+		95335C8EE43FE1742B473D91 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F941D340BCDF882F23F3E0BF /* Pods-Fbooking.debug.xcconfig */,
+				25F179E5AC34A6B096116EDD /* Pods-Fbooking.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +96,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 50F4E977230F97D50055D95D /* Build configuration list for PBXNativeTarget "Fbooking" */;
 			buildPhases = (
+				F0988E5554955FEBC2807A52 /* [CP] Check Pods Manifest.lock */,
 				50F4E961230F97D50055D95D /* Sources */,
 				50F4E962230F97D50055D95D /* Frameworks */,
 				50F4E963230F97D50055D95D /* Resources */,
+				A05EB90C809BD7DE46E9F706 /* [CP] Embed Pods Frameworks */,
+				2420B03FB1C92462B0EA7957 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -129,6 +157,65 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2420B03FB1C92462B0EA7957 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fbooking/Pods-Fbooking-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fbooking/Pods-Fbooking-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Fbooking/Pods-Fbooking-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A05EB90C809BD7DE46E9F706 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fbooking/Pods-Fbooking-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fbooking/Pods-Fbooking-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Fbooking/Pods-Fbooking-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F0988E5554955FEBC2807A52 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Fbooking-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		50F4E961230F97D50055D95D /* Sources */ = {
@@ -280,6 +367,7 @@
 		};
 		50F4E978230F97D50055D95D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F941D340BCDF882F23F3E0BF /* Pods-Fbooking.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -297,6 +385,7 @@
 		};
 		50F4E979230F97D50055D95D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25F179E5AC34A6B096116EDD /* Pods-Fbooking.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

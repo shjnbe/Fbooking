@@ -1,3 +1,6 @@
 xcuserdata
 contents.xcworkspacedata
 IDEWorkspaceChecks.plist
+.DS_Store
+Fbooking/Podfile.lock
+Fbooking/Pods
