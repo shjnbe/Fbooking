@@ -7,92 +7,59 @@
 //
 
 import UIKit
-
-class SignInViewController: UIViewController {
-
+import AccountKit
+class SignInViewController: UIViewController, AKFViewControllerDelegate {
+    var accountKit: AccountKitManager!
     
-    @IBOutlet weak var btnSelectPhoneAreaCode: UIButton!
-    @IBOutlet weak var txtPhoneNumber: UITextField!
-    @IBOutlet weak var viewUseWhatsAppContainer: UIView!
-    @IBOutlet weak var btnUseWhatsApp: UIButton!
-    @IBOutlet weak var btnUseSMS: UIButton!
-    @IBOutlet weak var tvCaption: UITextView!
-    @IBOutlet weak var lblUse: UILabel!
-    @IBOutlet weak var lblWhatsApp: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.navigationController?.isNavigationBarHidden = true
-        initView()
+        if accountKit == nil {
+            accountKit = AccountKitManager(responseType: .accessToken)
+        }
+       loginWithPhone()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if accountKit?.currentAccessToken != nil {
+            // if the user is already logged in, go to the main screen
+            self.gotoHomeViewController()
+        }
+        else {
+            // Show the login screen
+            loginWithPhone()
+        }
     }
     
-    /* init view */
-    func initView() {
-        txtPhoneNumber.text = "+84 "
-        txtPhoneNumber.becomeFirstResponder()
-        txtPhoneNumber.addTarget(self, action: #selector(self.txtPhoneNumberDidChange(_:)), for: .editingChanged)
-        btnUseSMS.isEnabled = false
-        btnUseSMS.alpha = 0.5
-        btnUseWhatsApp.isEnabled = false
-        viewUseWhatsAppContainer.backgroundColor = UIColor(hexString: "#D8D6D6", alpha: 0.5)
-        viewUseWhatsAppContainer.layer.borderColor = UIColor(hexString: "#BDC3C7",alpha: 0.5).cgColor
-        viewUseWhatsAppContainer.layer.borderWidth = 1
-        lblUse.textColor = UIColor(hexString: "#BDC3C7")
-        lblWhatsApp.textColor = UIColor(hexString: "#BDC3C7")
-        let string = "Fbooking sử dụng Account Kit, một công nghệ của Facebook, để đăng nhập cho bạn. Bạn không cần có tài khoản Facebook. Có thể áp dụng cước phí nhắn tin và dùng dữ liệu. Tìm hiểu cách Facebook sử dụng thông tin của bạn."
-        let range = (string as NSString).range(of: "Tìm hiểu cách Facebook sử dụng thông tin của bạn.")
-        let attributedString = NSMutableAttributedString(string: string)        
-        attributedString.addAttribute(NSAttributedString.Key.link, value: NSURL(string: "https://www.accountkit.com/faq")!, range: range)
-        attributedString.addAttribute(NSAttributedString.Key.underlineStyle, value: NSNumber(value: 1), range: range)
-        attributedString.addAttribute(NSAttributedString.Key.underlineColor, value: UIColor.black, range: range)
-        tvCaption.attributedText = attributedString
-    }
     
-    /* text field phone number did change function */
-    @objc func txtPhoneNumberDidChange(_ textField:UITextField){
-        if textField.text == "" {
-            print("Show Dialog Select Phone Area Code")
-            self.showDialogSelectPhoneAreaCode()
-        }
-        if textField.text!.count >= 6{
-            print("Enable Button")
-            btnUseSMS.isEnabled = true
-            btnUseSMS.alpha = 1
-            btnUseWhatsApp.isEnabled = true
-            viewUseWhatsAppContainer.backgroundColor = UIColor(hexString: "#F2F1F1", alpha: 1)
-            viewUseWhatsAppContainer.layer.borderColor = UIColor(hexString: "#000000",alpha: 1).cgColor
-            viewUseWhatsAppContainer.layer.borderWidth = 1
-            lblUse.textColor = UIColor(hexString: "#000000")
-            lblWhatsApp.textColor = UIColor(hexString: "#000000")
-        }
-        if textField.text!.count < 6 && textField.text!.count > 0{
-            print("Disable Button")
-            btnUseSMS.isEnabled = false
-            btnUseSMS.alpha = 0.5
-            btnUseWhatsApp.isEnabled = false
-            viewUseWhatsAppContainer.backgroundColor = UIColor(hexString: "#D8D6D6", alpha: 0.5)
-            viewUseWhatsAppContainer.layer.borderColor = UIColor(hexString: "#BDC3C7",alpha: 0.5).cgColor
-            viewUseWhatsAppContainer.layer.borderWidth = 1
-            lblUse.textColor = UIColor(hexString: "#BDC3C7")
-            lblWhatsApp.textColor = UIColor(hexString: "#BDC3C7")
-        }
+    func prepareLoginViewController(loginViewController: AKFViewController) {
+        loginViewController.delegate = self
+        loginViewController.uiManager = SkinManager(skinType: .translucent, primaryColor: UIColor.blue)
+    }
+    func loginWithPhone(){
+        let inputState = UUID().uuidString
+        let vc = (accountKit?.viewControllerForPhoneLogin(with: nil, state: inputState))!
+        vc.isSendToFacebookEnabled = true
+        self.prepareLoginViewController(loginViewController: vc)
+        self.present(vc as UIViewController, animated: true, completion: nil)
+    }
+    func gotoHomeViewController()  {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    // ACCOUNT KIT DELEGATE
+    func viewController(_ viewController: UIViewController & AKFViewController, didCompleteLoginWith code: String, state: String) {
+        print("didCompleteLoginWith code")
+    }
+    func viewController(_ viewController: UIViewController & AKFViewController, didCompleteLoginWith accessToken: AKFAccessToken, state: String) {
+        print("didCompleteLoginWith accessToken")
+        self.gotoHomeViewController()
+    }
+    func viewControllerDidCancel(_ viewController: UIViewController & AKFViewController) {
         
     }
-    
-    /* Show Dialog Select Phone Area Code */
-    func showDialogSelectPhoneAreaCode() {
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SelectPhoneAreaCodeViewController") as! SelectPhoneAreaCodeViewController
-        vc.closeCallBack = {
-            
-        }
-        self.addChild(vc)
-        vc.view.frame = self.view.frame
-        self.view.addSubview(vc.view)
-        vc.didMove(toParent: self)
-    }
-    
-    // ACTION OUTLET
-    @IBAction func onButtonSelectPhoneAreaCodeTapped(_ sender: Any) {
-        self.showDialogSelectPhoneAreaCode()
+    func viewController(_ viewController: UIViewController & AKFViewController, didFailWithError error: Error) {
+        print("didFailWithError error")
     }
 }
