@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B0CB0DB231C1E0C0037E750 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0CB0DA231C1E0C0037E750 /* HomeViewController.swift */; };
+		1BCE305423182D380033B74F /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCE305323182D380033B74F /* SignInViewController.swift */; };
+		1BCE3057231834610033B74F /* ExtensionViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCE3056231834610033B74F /* ExtensionViews.swift */; };
 		4613C5812DEBBFF070C590C1 /* Pods_Fbooking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 328B348E8CF057310B2D6EB6 /* Pods_Fbooking.framework */; };
 		50F4E969230F97D50055D95D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F4E968230F97D50055D95D /* AppDelegate.swift */; };
 		50F4E96B230F97D50055D95D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F4E96A230F97D50055D95D /* ViewController.swift */; };
@@ -16,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B0CB0DA231C1E0C0037E750 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		1BCE305323182D380033B74F /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		1BCE3056231834610033B74F /* ExtensionViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionViews.swift; sourceTree = "<group>"; };
 		25F179E5AC34A6B096116EDD /* Pods-Fbooking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fbooking.release.xcconfig"; path = "Target Support Files/Pods-Fbooking/Pods-Fbooking.release.xcconfig"; sourceTree = "<group>"; };
 		328B348E8CF057310B2D6EB6 /* Pods_Fbooking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fbooking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50F4E965230F97D50055D95D /* Fbooking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fbooking.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,6 +54,30 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		1B0CB0D7231C1DD10037E750 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				1B0CB0DA231C1E0C0037E750 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		1BCE305223182CC00033B74F /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				1BCE305323182D380033B74F /* SignInViewController.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		1BCE3055231834310033B74F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				1BCE3056231834610033B74F /* ExtensionViews.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		50F4E95C230F97D50055D95D = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +99,9 @@
 		50F4E967230F97D50055D95D /* Fbooking */ = {
 			isa = PBXGroup;
 			children = (
+				1B0CB0D7231C1DD10037E750 /* Home */,
+				1BCE3055231834310033B74F /* Utils */,
+				1BCE305223182CC00033B74F /* SignIn */,
 				50F4E968230F97D50055D95D /* AppDelegate.swift */,
 				50F4E96A230F97D50055D95D /* ViewController.swift */,
 				50F4E96C230F97D50055D95D /* Main.storyboard */,
@@ -85,7 +118,6 @@
 				F941D340BCDF882F23F3E0BF /* Pods-Fbooking.debug.xcconfig */,
 				25F179E5AC34A6B096116EDD /* Pods-Fbooking.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -222,8 +254,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B0CB0DB231C1E0C0037E750 /* HomeViewController.swift in Sources */,
 				50F4E96B230F97D50055D95D /* ViewController.swift in Sources */,
 				50F4E969230F97D50055D95D /* AppDelegate.swift in Sources */,
+				1BCE3057231834610033B74F /* ExtensionViews.swift in Sources */,
+				1BCE305423182D380033B74F /* SignInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,7 +335,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -355,7 +390,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -371,6 +406,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RCAA4L9GJ4;
 				INFOPLIST_FILE = Fbooking/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -389,6 +425,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RCAA4L9GJ4;
 				INFOPLIST_FILE = Fbooking/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
