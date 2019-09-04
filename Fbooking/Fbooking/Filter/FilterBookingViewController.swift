@@ -16,17 +16,17 @@ class FilterBookingViewController: UIViewController {
     let sectionLeft: CGFloat = 16
     let sectionRight:CGFloat = 16
     var cellWidth: CGFloat = 100
-    var cellHeigh: CGFloat = 100
+    var cellHeight: CGFloat = 100
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         timeFilterCollectionView.dataSource = self
         timeFilterCollectionView.delegate = self
-        cellWidth = (timeFilterCollectionView.bounds.width - (2*cellSpacing+sectionLeft+sectionRight))/3
-        cellHeigh = 50
         updateConstraintTimeFilterCollectionView()
     }
     func updateConstraintTimeFilterCollectionView() {
+        cellWidth = (timeFilterCollectionView.bounds.width - (2*cellSpacing+sectionLeft+sectionRight))/3
+        cellHeight = 50
         let height = timeFilterCollectionView.collectionViewLayout.collectionViewContentSize.height
         timeFilterCollectionViewHeightConstraint.constant = height
         self.view.setNeedsLayout()
@@ -68,7 +68,7 @@ extension FilterBookingViewController:UICollectionViewDelegate{
 }
 extension FilterBookingViewController:UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: cellWidth, height: cellHeigh)
+        return CGSize(width: cellWidth, height: cellHeight)
     }
 
 }

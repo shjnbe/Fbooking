@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BookingStadiumTableViewCell: UITableViewCell {
+class HomeBookingStadiumTableViewCell: UITableViewCell {
 
     @IBOutlet weak var imgStadiumCover: UIImageView!
     @IBOutlet weak var lblNameStadium: UILabel!
