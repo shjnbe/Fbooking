@@ -24,6 +24,11 @@ class BookingStadiumViewController: UIViewController {
     }
     @IBAction func onFilterButtonTapped(_ sender: Any) {
         print("onFilterButtonTapped")
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FilterBookingViewController") as! FilterBookingViewController
+        self.addChild(vc)
+        vc.view.frame = self.view.frame
+        self.view.addSubview(vc.view)
+        vc.didMove(toParent: self)
     }
     @IBAction func onSearchButtonTapped(_ sender: Any) {
         print("onSearchButtonTapped")
