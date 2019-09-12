@@ -22,6 +22,12 @@
 		1BEA523C232056B400043C94 /* TimeBookingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEA523B232056B400043C94 /* TimeBookingCollectionViewCell.swift */; };
 		1BEA523E232056C100043C94 /* TeamBookingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEA523D232056C100043C94 /* TeamBookingCollectionViewCell.swift */; };
 		4613C5812DEBBFF070C590C1 /* Pods_Fbooking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 328B348E8CF057310B2D6EB6 /* Pods_Fbooking.framework */; };
+		505CAE372329EAD3004DB563 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505CAE342329EAD3004DB563 /* Config.swift */; };
+		505CAE382329EAD3004DB563 /* UtilsFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505CAE352329EAD3004DB563 /* UtilsFunction.swift */; };
+		505CAE392329EAD3004DB563 /* AppDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505CAE362329EAD3004DB563 /* AppDefine.swift */; };
+		505CAE3D2329ED12004DB563 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505CAE3A2329ED12004DB563 /* ApiClient.swift */; };
+		505CAE3E2329ED12004DB563 /* OAuth2Handler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505CAE3B2329ED12004DB563 /* OAuth2Handler.swift */; };
+		505CAE3F2329ED12004DB563 /* ApiClient+Authen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505CAE3C2329ED12004DB563 /* ApiClient+Authen.swift */; };
 		50F4E969230F97D50055D95D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F4E968230F97D50055D95D /* AppDelegate.swift */; };
 		50F4E96B230F97D50055D95D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F4E96A230F97D50055D95D /* ViewController.swift */; };
 		50F4E96E230F97D50055D95D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50F4E96C230F97D50055D95D /* Main.storyboard */; };
@@ -46,6 +52,12 @@
 		1BEA523D232056C100043C94 /* TeamBookingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamBookingCollectionViewCell.swift; sourceTree = "<group>"; };
 		25F179E5AC34A6B096116EDD /* Pods-Fbooking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fbooking.release.xcconfig"; path = "Target Support Files/Pods-Fbooking/Pods-Fbooking.release.xcconfig"; sourceTree = "<group>"; };
 		328B348E8CF057310B2D6EB6 /* Pods_Fbooking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fbooking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		505CAE342329EAD3004DB563 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		505CAE352329EAD3004DB563 /* UtilsFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilsFunction.swift; sourceTree = "<group>"; };
+		505CAE362329EAD3004DB563 /* AppDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDefine.swift; sourceTree = "<group>"; };
+		505CAE3A2329ED12004DB563 /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		505CAE3B2329ED12004DB563 /* OAuth2Handler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuth2Handler.swift; sourceTree = "<group>"; };
+		505CAE3C2329ED12004DB563 /* ApiClient+Authen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ApiClient+Authen.swift"; sourceTree = "<group>"; };
 		50F4E965230F97D50055D95D /* Fbooking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fbooking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50F4E968230F97D50055D95D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50F4E96A230F97D50055D95D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -139,10 +151,37 @@
 				1B4481BA231D5E3300726AEC /* Search */,
 				1B0CB0DC231D1F250037E750 /* Booking */,
 				1B0CB0D7231C1DD10037E750 /* Home */,
-				1BCE3055231834310033B74F /* Utils */,
 				1BCE305223182CC00033B74F /* SignIn */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		505CAE312329EA17004DB563 /* Networks */ = {
+			isa = PBXGroup;
+			children = (
+				505CAE3A2329ED12004DB563 /* ApiClient.swift */,
+				505CAE3C2329ED12004DB563 /* ApiClient+Authen.swift */,
+				505CAE3B2329ED12004DB563 /* OAuth2Handler.swift */,
+			);
+			path = Networks;
+			sourceTree = "<group>";
+		};
+		505CAE322329EA38004DB563 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				505CAE362329EAD3004DB563 /* AppDefine.swift */,
+				505CAE342329EAD3004DB563 /* Config.swift */,
+				505CAE352329EAD3004DB563 /* UtilsFunction.swift */,
+				1BCE3055231834310033B74F /* Utils */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		505CAE332329EA5B004DB563 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		50F4E95C230F97D50055D95D = {
@@ -166,6 +205,9 @@
 		50F4E967230F97D50055D95D /* Fbooking */ = {
 			isa = PBXGroup;
 			children = (
+				505CAE332329EA5B004DB563 /* Models */,
+				505CAE322329EA38004DB563 /* Helper */,
+				505CAE312329EA17004DB563 /* Networks */,
 				505CAE302329E9DB004DB563 /* ViewControllers */,
 				50F4E968230F97D50055D95D /* AppDelegate.swift */,
 				50F4E96A230F97D50055D95D /* ViewController.swift */,
@@ -319,10 +361,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				505CAE3E2329ED12004DB563 /* OAuth2Handler.swift in Sources */,
 				1BEA52392320541500043C94 /* BookingStadiumViewController.swift in Sources */,
 				1B0CB0DB231C1E0C0037E750 /* HomeViewController.swift in Sources */,
 				1B2C3A3A231FCA3800D6181F /* DatePickerViewController.swift in Sources */,
 				1B2C3A36231FADEF00D6181F /* FilterBookingViewController.swift in Sources */,
+				505CAE392329EAD3004DB563 /* AppDefine.swift in Sources */,
+				505CAE372329EAD3004DB563 /* Config.swift in Sources */,
+				505CAE382329EAD3004DB563 /* UtilsFunction.swift in Sources */,
 				50F4E96B230F97D50055D95D /* ViewController.swift in Sources */,
 				1B0CB0E0231D20BB0037E750 /* HomeBookingStadiumViewController.swift in Sources */,
 				50F4E969230F97D50055D95D /* AppDelegate.swift in Sources */,
@@ -334,7 +380,9 @@
 				1B2C3A38231FB56C00D6181F /* FilterBookingCollectionViewCell.swift in Sources */,
 				1BEA523E232056C100043C94 /* TeamBookingCollectionViewCell.swift in Sources */,
 				1BCE305423182D380033B74F /* SignInViewController.swift in Sources */,
+				505CAE3F2329ED12004DB563 /* ApiClient+Authen.swift in Sources */,
 				1BEA523C232056B400043C94 /* TimeBookingCollectionViewCell.swift in Sources */,
+				505CAE3D2329ED12004DB563 /* ApiClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

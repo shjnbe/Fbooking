@@ -8,7 +8,7 @@
 
 import UIKit
 import AccountKit
-class SignInViewController: UIViewController, AKFViewControllerDelegate {
+class SignInViewController: UIViewController {
     var accountKit: AccountKitManager!
     
     override func viewDidLoad() {
@@ -48,6 +48,10 @@ class SignInViewController: UIViewController, AKFViewControllerDelegate {
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }
+
+}
+
+extension SignInViewController: AKFViewControllerDelegate {
     // ACCOUNT KIT DELEGATE
     func viewController(_ viewController: UIViewController & AKFViewController, didCompleteLoginWith code: String, state: String) {
         print("didCompleteLoginWith code")
