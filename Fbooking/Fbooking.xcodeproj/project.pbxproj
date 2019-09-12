@@ -132,11 +132,17 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		1BEA523A2320542100043C94 /* New Group */ = {
+		505CAE302329E9DB004DB563 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				1B2C3A34231FADC900D6181F /* Filter */,
+				1B4481BA231D5E3300726AEC /* Search */,
+				1B0CB0DC231D1F250037E750 /* Booking */,
+				1B0CB0D7231C1DD10037E750 /* Home */,
+				1BCE3055231834310033B74F /* Utils */,
+				1BCE305223182CC00033B74F /* SignIn */,
 			);
-			path = "New Group";
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		50F4E95C230F97D50055D95D = {
@@ -160,13 +166,7 @@
 		50F4E967230F97D50055D95D /* Fbooking */ = {
 			isa = PBXGroup;
 			children = (
-				1BEA523A2320542100043C94 /* New Group */,
-				1B2C3A34231FADC900D6181F /* Filter */,
-				1B4481BA231D5E3300726AEC /* Search */,
-				1B0CB0DC231D1F250037E750 /* Booking */,
-				1B0CB0D7231C1DD10037E750 /* Home */,
-				1BCE3055231834310033B74F /* Utils */,
-				1BCE305223182CC00033B74F /* SignIn */,
+				505CAE302329E9DB004DB563 /* ViewControllers */,
 				50F4E968230F97D50055D95D /* AppDelegate.swift */,
 				50F4E96A230F97D50055D95D /* ViewController.swift */,
 				50F4E96C230F97D50055D95D /* Main.storyboard */,
