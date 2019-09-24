@@ -3,15 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>FacebookAppID</key>
-	<string>389949725053277</string>
+	<string>385497902050990</string>
 	<key>AccountKitClientToken</key>
-	<string>1a71a14807984bc961fed99137b51817</string>
+	<string>7942954d5864235923ead867d79656a6</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>ak1a71a14807984bc961fed99137b51817</string>
+				<string>ak7942954d5864235923ead867d79656a6</string>
 			</array>
 		</dict>
 	</array>
