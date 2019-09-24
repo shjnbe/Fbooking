@@ -28,7 +28,7 @@ class SignInViewController: UIViewController {
         }
         else {
             // Show the login screen
-            loginWithPhone()
+            
         }
     }
     
